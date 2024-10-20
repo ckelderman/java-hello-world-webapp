@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-   version="6.0">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Session configuration settings -->
     <session-config>
         <session-timeout>
-            30
+            30 <!-- Session timeout in minutes -->
         </session-timeout>
     </session-config>
+
+    <!-- Define the ProductsServlet -->
+    <servlet>
+        <servlet-name>ProductsServlet</servlet-name>
+        <servlet-class>music.servlets.ProductServlet</servlet-class>
+    </servlet>
+
+    <!-- Map the ProductsServlet to the URL pattern /productMaint -->
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/productMaint</url-pattern>
+    </servlet-mapping>
+
 </web-app>

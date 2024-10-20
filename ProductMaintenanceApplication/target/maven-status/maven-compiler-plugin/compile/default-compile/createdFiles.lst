@@ -1,2 +1,3 @@
-music\business\Product.class
+music\controllers\ProductServlet.class
 music\data\ProductIO.class
+music\business\Product.class
