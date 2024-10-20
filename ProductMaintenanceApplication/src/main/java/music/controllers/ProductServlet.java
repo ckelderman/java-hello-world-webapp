@@ -17,11 +17,10 @@ public class ProductServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         // Initialize the ProductIO with the file path to the products.txt file
-        // FIX ME: For some reason, my IDE has difficulty finding the relative file path so I have to use the absolute for it to work.
-        /* It should reference the products.txt file in the WEB-INF directory with:
-            String filePath = getServletContext().getRealPath("/WEB-INF/products.txt");
+        /*FIX ME: For some reason, my IDE has difficulty finding the relative file path so I have to use the absolute for it to work. I've kept the relative path here but
+        if this doesn't work, add the absolute path.
         */
-        String filePath = "C:\\Users\\codyk\\OneDrive\\Documents\\School\\Java II\\Final Project\\ProductMaintenanceApplication\\ProductMaintenanceApplication\\src\\main\\webapp\\WEB-INF\\product.txt";
+        String filePath = getServletContext().getRealPath("/WEB-INF/products.txt");
         System.out.println("Initializing ProductIO with file path: " + filePath); // Debug statement
         ProductIO.init(filePath); // Call the init method of ProductIO to set the file path
         System.out.println("ProductIO initialized"); // Debug statement to confirm initialization
